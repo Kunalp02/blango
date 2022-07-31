@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'blango.wsgi.application'
-
+# AUTH_USER_MODEL = 'blog.user'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

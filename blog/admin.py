@@ -8,4 +8,5 @@ admin.site.register(Post)
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug":("title",)}
+    list_display = ('summary', 'content')
     

@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-class Tag:
+class Tag(models.Model):
     value = models.TextField(max_length=100)
 
 
@@ -9,8 +9,8 @@ class Tag:
         return self.value
 
 
-class Post:
-    author = models.ForeignKey(settings.AUTH_UESER_MODEL, on_delete=models.PROTECT)
+class Post(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)   
