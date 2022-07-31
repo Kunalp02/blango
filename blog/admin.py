@@ -1,12 +1,13 @@
 from django.contrib import admin
-from blog.models import Tag, Post
+from .models import Tag, Post, Comment
 
-
-admin.site.register(Tag)
-admin.site.register(Post)
 
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug":("title",)}
-    list_display = ('summary', 'content')
+    # list_display = ('summary', 'content')
     
+admin.site.register(Tag)
+admin.site.register(Post, PostAdmin)
+admin.site.register(Comment)
+
