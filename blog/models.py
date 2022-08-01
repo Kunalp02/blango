@@ -32,6 +32,7 @@ class Post(models.Model):
     content = models.TextField()
     tags = models.ManyToManyField(Tag, related_name="posts")
     comments = GenericRelation(Comment)
+    email = models.EmailField(max_length=50)
 
     def __str__(self):
         return self.title
